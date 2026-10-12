@@ -1,4 +1,4 @@
-function Keypad() {
+function Keypad({ onButtonClick }) {
   const buttons = [
     { label: "AC", type: "utility" },
     { label: "⌫", type: "utility" },
@@ -34,6 +34,7 @@ function Keypad() {
           className={`calculator-button ${button.type} ${
             button.label === "=" ? "equals-button" : ""
           }`}
+          onClick={() => onButtonClick(button.label)}
         >
           {button.label}
         </button>
